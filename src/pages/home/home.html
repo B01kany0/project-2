@@ -1,0 +1,41 @@
+<ion-content>
+<ion-img src=""></ion-img>
+
+<ion-list>
+
+  <ion-item>
+    <ion-label stacked>First name</ion-label>
+    <ion-input type="text" #name></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Surname</ion-label>
+    <ion-input type="text" #surname></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Identity No.</ion-label>
+    <ion-input type="text" #identity></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Employee No.</ion-label>
+    <ion-input type="text" #employee></ion-input>
+  </ion-item>
+</ion-list>
+
+<button ion-button full (click)="addemploy(name.value, surname.value, identity.value, employee.value)">Add</button>
+
+<ion-card  >
+  <ion-card-header>
+    Details of Employee
+  </ion-card-header>
+  <ion-card-content *ngFor="let i of employ; let b = index"><button ion-button round (click)="delete(b)">Delete</button>
+      <button ion-button round
+      (click)="updateEmployee(b,name.value,surname.value,role.value,id.value)">update Employee</button>
+    {{i.name}}&#160;
+    {{i.surname}}&#160;
+    {{i.identity}}&#160;
+    {{i.employee}}
+    </ion-card-content>
+</ion-card></ion-content>
